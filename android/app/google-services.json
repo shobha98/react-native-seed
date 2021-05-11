@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "422867167612",
+    "project_id": "rnseed-b1c57",
+    "storage_bucket": "rnseed-b1c57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422867167612:android:a791ea09689b1447e3dcf9",
+        "android_client_info": {
+          "package_name": "com.rnseed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422867167612-vgjagc2bhutbi37d7ebdoa73bn31698d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rnseed",
+            "certificate_hash": "bef5510bdba0d2d6df67834ca1af279a458a260e"
+          }
+        },
+        {
+          "client_id": "422867167612-33203nmh6sis1oakpj78v6kar0cil1a0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0PN91fePIiYvUsQrgiHgq_5u2Pp_D0qQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422867167612-33203nmh6sis1oakpj78v6kar0cil1a0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
