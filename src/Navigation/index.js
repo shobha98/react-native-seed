@@ -2,7 +2,15 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import CounterExample from '../screens/counterExample';
+import MainScreen, {
+  HooksExample,
+  ReduxExample,
+  ReducerHook,
+  ContextHook,
+  UseRefHook,
+  MemoHook,
+  ImperativeHandle,
+} from '../screens';
 
 const Stack = createStackNavigator();
 
@@ -10,11 +18,19 @@ const AppNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={'CounterExample'}
-        screenOptions={{
-          headerShown: false,
-        }}>
-        <Stack.Screen name="CounterExample" component={CounterExample} />
+        initialRouteName={'MainScreen'}
+        // screenOptions={{
+        //   headerShown: false,
+        // }}
+      >
+        <Stack.Screen name="MainScreen" component={MainScreen} />
+        <Stack.Screen name="ReduxExample" component={ReduxExample} />
+        <Stack.Screen name="HooksExample" component={HooksExample} />
+        <Stack.Screen name="ReducerHook" component={ReducerHook} />
+        <Stack.Screen name="ContextHook" component={ContextHook} />
+        <Stack.Screen name="UseRefHook" component={UseRefHook} />
+        <Stack.Screen name="MemoHook" component={MemoHook} />
+        <Stack.Screen name="ImperativeHandle" component={ImperativeHandle} />
       </Stack.Navigator>
     </NavigationContainer>
   );

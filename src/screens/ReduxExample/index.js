@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 // import crashlytics from '@react-native-firebase/crashlytics';
 
-import {increaseCount, decreaseCount} from '../Redux/actions';
+import {increaseCount, decreaseCount} from '../../Redux/actions';
 
 const CounterExample = () => {
   const dispatch = useDispatch();
