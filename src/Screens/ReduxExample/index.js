@@ -3,11 +3,17 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 // import crashlytics from '@react-native-firebase/crashlytics';
 
-import {increaseCount, decreaseCount} from '../../Redux/actions';
+import {string} from '../../Config/string';
+
+import {
+  increaseCount,
+  decreaseCount,
+  resetCount,
+} from '../../Redux/Actions/counterAction';
 
 const CounterExample = () => {
   const dispatch = useDispatch();
-  const count = useSelector((state) => state.count);
+  const count = useSelector((state) => state.counterReducer.count);
 
   // useEffect(() => {
   //   console.log('Before crash method');
@@ -18,6 +24,12 @@ const CounterExample = () => {
   //     crashlytics().log('Page Just Unmounted');
   //   };
   // }, []);
+
+  useEffect(() => {
+    return () => {
+      dispatch(resetCount());
+    };
+  }, []);
 
   const IncreaseCount = () => {
     dispatch(increaseCount());
@@ -32,10 +44,14 @@ const CounterExample = () => {
       <Text style={styles.countText}>{count}</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={() => IncreaseCount()}>
-          <Text style={styles.buttonText}>INCREASE</Text>
+          <Text style={styles.buttonText}>
+            {string.increment.toUpperCase()}
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => DecreaseCount()}>
-          <Text style={styles.buttonText}>DECREASE</Text>
+          <Text style={styles.buttonText}>
+            {string.decrement.toUpperCase()}
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -54,15 +70,21 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   button: {
-    backgroundColor: 'blue',
+    backgroundColor: 'darkblue',
     padding: 10,
+    marginTop: 20,
+    width: 170,
+    alignItems: 'center',
   },
   buttonText: {
     color: 'white',
+    fontWeight: 'bold',
+    letterSpacing: 1,
   },
   countText: {
     alignSelf: 'center',
     fontSize: 30,
     marginBottom: 50,
+    color: 'black',
   },
 });

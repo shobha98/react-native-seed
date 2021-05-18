@@ -5,7 +5,8 @@ import SplashScreen from 'react-native-splash-screen';
 
 import AppNavigator from './src/Navigation';
 import {store} from './src/Redux';
-import RemotePushController from './src/components/RemotePushController';
+import RemotePushController from './src/Components/RemotePushController';
+import NetworkInfo from './src/Components/networkInfo';
 
 firebase.initializeApp();
 
@@ -18,6 +19,7 @@ const App = () => {
     <Provider store={store}>
       <RemotePushController />
       <AppNavigator />
+      {/* <NetworkInfo /> */}
     </Provider>
   );
 };
