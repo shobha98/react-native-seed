@@ -8,6 +8,10 @@ import ReducerHook from './HooksExample/ReducerHook';
 import UseRefHook from './HooksExample/UseRefHook';
 import MemoHook from './HooksExample/MemoHook';
 import ImperativeHandle from './HooksExample/ImperativeHandle';
+import ReduxSagaExample from './ReduxSagaExample';
+
+import {string} from '../Config/string';
+import NetworkInfo from '../Components/networkInfo';
 
 export {
   HooksExample,
@@ -17,6 +21,7 @@ export {
   UseRefHook,
   MemoHook,
   ImperativeHandle,
+  ReduxSagaExample,
 };
 
 const MainScreen = ({navigation}) => {
@@ -25,12 +30,17 @@ const MainScreen = ({navigation}) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('ReduxExample')}>
-        <Text style={styles.text}>Redux Counter Example</Text>
+        <Text style={styles.text}>{string.redux_example}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('HooksExample')}>
-        <Text style={styles.text}>Hooks Example</Text>
+        <Text style={styles.text}>{string.hooks_example}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('ReduxSagaExample')}>
+        <Text style={styles.text}>{string.redux_saga_example}</Text>
       </TouchableOpacity>
     </View>
   );

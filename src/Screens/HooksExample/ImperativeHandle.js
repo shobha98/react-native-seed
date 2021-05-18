@@ -1,12 +1,14 @@
 import React, {useState, useRef, useImperativeHandle, forwardRef} from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 
+import {string} from '../../Config/string';
+
 const ImperativeHandle = () => {
   const ref = useRef();
   //   console.log("ref>..", ref);
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>useImperativeHandle Example</Text>
+      <Text style={styles.heading}>{string.use_imperative_handle_example}</Text>
       <Counter ref={ref} />
       <View style={styles.button}>
         <Button

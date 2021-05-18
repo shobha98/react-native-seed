@@ -10,7 +10,8 @@ import MainScreen, {
   UseRefHook,
   MemoHook,
   ImperativeHandle,
-} from '../screens';
+  ReduxSagaExample,
+} from '../Screens';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,7 @@ const AppNavigator = () => {
         <Stack.Screen name="UseRefHook" component={UseRefHook} />
         <Stack.Screen name="MemoHook" component={MemoHook} />
         <Stack.Screen name="ImperativeHandle" component={ImperativeHandle} />
+        <Stack.Screen name="ReduxSagaExample" component={ReduxSagaExample} />
       </Stack.Navigator>
     </NavigationContainer>
   );

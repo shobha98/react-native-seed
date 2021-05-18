@@ -1,26 +1,27 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {string} from '../../Config/string';
 
 const MainScreen = ({navigation}) => {
   const hooksList = [
     {
-      title: 'ContextHook',
+      title: string.context_hook,
       navigateTo: 'ContextHook',
     },
     {
-      title: 'ReducerHook',
+      title: string.reducer_hook,
       navigateTo: 'ReducerHook',
     },
     {
-      title: 'UseRefHook',
+      title: string.use_ref_hook,
       navigateTo: 'UseRefHook',
     },
     {
-      title: 'MemoHook',
+      title: string.memo_hook,
       navigateTo: 'MemoHook',
     },
     {
-      title: 'ImperativeHandle',
+      title: string.imperative_handle,
       navigateTo: 'ImperativeHandle',
     },
   ];
