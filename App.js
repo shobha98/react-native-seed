@@ -19,7 +19,7 @@ const App = () => {
     <Provider store={store}>
       <RemotePushController />
       <AppNavigator />
-      {/* <NetworkInfo /> */}
+      <NetworkInfo />
     </Provider>
   );
 };

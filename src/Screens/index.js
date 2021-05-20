@@ -11,7 +11,6 @@ import ImperativeHandle from './HooksExample/ImperativeHandle';
 import ReduxSagaExample from './ReduxSagaExample';
 
 import {string} from '../Config/string';
-import NetworkInfo from '../Components/networkInfo';
 
 export {
   HooksExample,

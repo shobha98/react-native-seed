@@ -13,17 +13,21 @@ import MainScreen, {
   ReduxSagaExample,
 } from '../Screens';
 
+import LoginScreen from '../Screens/LoginScreen';
+import SignupScreen from '../Screens/SignupScreen';
+
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={'MainScreen'}
-        // screenOptions={{
-        //   headerShown: false,
-        // }}
-      >
+        initialRouteName={'LoginScreen'}
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Stack.Screen name="SignupScreen" component={SignupScreen} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="MainScreen" component={MainScreen} />
         <Stack.Screen name="ReduxExample" component={ReduxExample} />
         <Stack.Screen name="HooksExample" component={HooksExample} />
