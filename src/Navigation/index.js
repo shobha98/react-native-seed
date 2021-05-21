@@ -2,19 +2,17 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import MainScreen, {
-  HooksExample,
-  ReduxExample,
+import {
+  LoginScreen,
+  SignupScreen,
   ReducerHook,
   ContextHook,
   UseRefHook,
   MemoHook,
   ImperativeHandle,
-  ReduxSagaExample,
 } from '../Screens';
 
-import LoginScreen from '../Screens/LoginScreen';
-import SignupScreen from '../Screens/SignupScreen';
+import DrawerNavigator from './drawerNavigator';
 
 const Stack = createStackNavigator();
 
@@ -28,15 +26,12 @@ const AppNavigator = () => {
         }}>
         <Stack.Screen name="SignupScreen" component={SignupScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        <Stack.Screen name="MainScreen" component={MainScreen} />
-        <Stack.Screen name="ReduxExample" component={ReduxExample} />
-        <Stack.Screen name="HooksExample" component={HooksExample} />
+        <Stack.Screen name="HomeScreen" component={DrawerNavigator} />
         <Stack.Screen name="ReducerHook" component={ReducerHook} />
         <Stack.Screen name="ContextHook" component={ContextHook} />
         <Stack.Screen name="UseRefHook" component={UseRefHook} />
         <Stack.Screen name="MemoHook" component={MemoHook} />
         <Stack.Screen name="ImperativeHandle" component={ImperativeHandle} />
-        <Stack.Screen name="ReduxSagaExample" component={ReduxSagaExample} />
       </Stack.Navigator>
     </NavigationContainer>
   );

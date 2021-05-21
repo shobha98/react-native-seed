@@ -3,6 +3,8 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 // import crashlytics from '@react-native-firebase/crashlytics';
 
+import CustomHeader from '../../Components/customHeader';
+
 import {string} from '../../Config/string';
 
 import {
@@ -10,8 +12,9 @@ import {
   decreaseCount,
   resetCount,
 } from '../../Redux/Actions/counterAction';
+import {colors} from '../../Styles/colors';
 
-const CounterExample = () => {
+const CounterExample = ({navigation}) => {
   const dispatch = useDispatch();
   const count = useSelector((state) => state.counterReducer.count);
 
@@ -40,21 +43,29 @@ const CounterExample = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.countText}>{count}</Text>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => IncreaseCount()}>
-          <Text style={styles.buttonText}>
-            {string.increment.toUpperCase()}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => DecreaseCount()}>
-          <Text style={styles.buttonText}>
-            {string.decrement.toUpperCase()}
-          </Text>
-        </TouchableOpacity>
+    <>
+      <CustomHeader screenName="Redux Example" navigation={navigation} />
+
+      <View style={styles.container}>
+        <Text style={styles.countText}>{count}</Text>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => IncreaseCount()}>
+            <Text style={styles.buttonText}>
+              {string.increment.toUpperCase()}
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => DecreaseCount()}>
+            <Text style={styles.buttonText}>
+              {string.decrement.toUpperCase()}
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
+    </>
   );
 };
 
@@ -64,6 +75,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    backgroundColor: colors.white,
   },
   buttonContainer: {
     flexDirection: 'row',

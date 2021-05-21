@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 
-import {styles} from './styles';
-
 import {string} from '../../Config/string';
+
+import {styles} from './styles';
 
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -32,7 +32,9 @@ const LoginScreen = ({navigation}) => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={() => {}}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('HomeScreen')}>
         <Text style={styles.buttonText}>{string.login.toUpperCase()}</Text>
       </TouchableOpacity>
       <View style={styles.bottomView}>

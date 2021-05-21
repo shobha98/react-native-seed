@@ -1,6 +1,9 @@
 import React, {useState, useMemo, useEffect, useCallback} from 'react';
 import {View, Text, Button, TextInput, StyleSheet} from 'react-native';
 
+import CustomHeader from '../../Components/customHeader';
+import {colors} from '../../Styles/colors';
+
 const DisplayText = React.memo(({text}) => {
   // console.log("displayText");
   return <Text style={styles.text}>Entered Text is {text}</Text>;
@@ -23,7 +26,7 @@ const calculateSquare = (count) => {
 // return <Text style={styles.text}>Entered Text is {text}</Text>;
 // };
 
-const MemoHook = () => {
+const MemoHook = ({navigation}) => {
   const [count, setCount] = useState(0);
   const [text, setText] = useState('Shobha');
 
@@ -42,24 +45,31 @@ const MemoHook = () => {
   // };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>useMemo and useCallback Hooks</Text>
-      <Text style={[styles.text, {marginTop: 80}]}>
-        Square of {count} is {result}
-      </Text>
-      <View style={styles.button}>
-        <Button title="Increment" onPress={() => setCount(count + 1)} />
-        <Button title="Decrement" onPress={() => setCount(count - 1)} />
-      </View>
-      <TextInput
-        style={styles.input}
-        value={text}
-        onChangeText={(e) => setText(e)}
-        type="text"
+    <>
+      <CustomHeader
+        screenName="useMemo & useCallback Example"
+        navigation={navigation}
+        backArrow={true}
       />
-      <DisplayText text={text} />
-      {/* <DisplayText displayText={displayText} /> */}
-    </View>
+      <View style={styles.container}>
+        {/* <Text style={styles.heading}>useMemo and useCallback Hooks</Text> */}
+        <Text style={[styles.text, {marginTop: 80}]}>
+          Square of {count} is {result}
+        </Text>
+        <View style={styles.button}>
+          <Button title="Increment" onPress={() => setCount(count + 1)} />
+          <Button title="Decrement" onPress={() => setCount(count - 1)} />
+        </View>
+        <TextInput
+          style={styles.input}
+          value={text}
+          onChangeText={(e) => setText(e)}
+          type="text"
+        />
+        <DisplayText text={text} />
+        {/* <DisplayText displayText={displayText} /> */}
+      </View>
+    </>
   );
 };
 
@@ -68,6 +78,7 @@ export default MemoHook;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.white,
   },
   heading: {
     fontWeight: 'bold',
