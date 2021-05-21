@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import {moderateScale, verticalScale} from '../Styles/scale';
-import colors from '../Styles/colors';
+import {colors} from '../Styles/colors';
 
 const PopUpModal = ({isPopUp, setIsPopUp, title, content}) => {
   const handleOnPress = useCallback(

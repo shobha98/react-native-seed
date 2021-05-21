@@ -1,12 +1,16 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
+import CustomHeader from '../../Components/customHeader';
 import Post from './posts';
 
-const ReduxSagaExample = () => {
+const ReduxSagaExample = ({navigation}) => {
   return (
-    <View style={styles.container}>
-      <Post />
-    </View>
+    <>
+      <CustomHeader screenName="Redux-Saga Example" navigation={navigation} />
+      <View style={styles.container}>
+        <Post />
+      </View>
+    </>
   );
 };
 

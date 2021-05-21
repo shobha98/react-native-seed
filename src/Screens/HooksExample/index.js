@@ -1,6 +1,10 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+
+import CustomHeader from '../../Components/customHeader';
+
 import {string} from '../../Config/string';
+import {colors} from '../../Styles/colors';
 
 const MainScreen = ({navigation}) => {
   const hooksList = [
@@ -27,15 +31,18 @@ const MainScreen = ({navigation}) => {
   ];
 
   return (
-    <View styles={styles.container}>
-      {hooksList.map((item) => (
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate(item.navigateTo)}>
-          <Text style={styles.text}>{item.title}</Text>
-        </TouchableOpacity>
-      ))}
-    </View>
+    <>
+      <CustomHeader screenName="Hooks Example" navigation={navigation} />
+      <View style={styles.container}>
+        {hooksList.map((item) => (
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate(item.navigateTo)}>
+            <Text style={styles.text}>{item.title}</Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+    </>
   );
 };
 
@@ -44,18 +51,20 @@ export default MainScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.white,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   button: {
     backgroundColor: 'darkred',
     padding: 10,
     marginVertical: 15,
     minWidth: 300,
-    alignSelf: 'center',
     alignItems: 'center',
     borderRadius: 15,
   },
   text: {
-    color: 'white',
+    color: colors.white,
     fontSize: 20,
     fontWeight: 'bold',
   },

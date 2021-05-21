@@ -1,7 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
 
-const UseRefHook = () => {
+import CustomHeader from '../../Components/customHeader';
+import {colors} from '../../Styles/colors';
+
+const UseRefHook = ({navigation}) => {
   const [counter, setCounter] = useState(0);
   const [name, setName] = useState('Shobha Shrivastava');
 
@@ -18,29 +21,36 @@ const UseRefHook = () => {
   }, [counter]);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>useRef Hook</Text>
-      <TextInput
-        style={styles.input}
-        ref={elementRef}
-        type="text"
-        value={name}
-        onChangeText={(e) => setName(e)}
+    <>
+      <CustomHeader
+        screenName="useRef Example"
+        navigation={navigation}
+        backArrow={true}
       />
-      <View style={styles.button}>
-        <Button title="Click Here" onPress={() => handleClick()} />
+      <View style={styles.container}>
+        {/* <Text style={styles.heading}>useRef Hook</Text> */}
+        <TextInput
+          style={styles.input}
+          ref={elementRef}
+          type="text"
+          value={name}
+          onChangeText={(e) => setName(e)}
+        />
+        <View style={styles.button}>
+          <Button title="Click Here" onPress={() => handleClick()} />
+        </View>
+        <Text style={styles.text}>Current value of Counter {counter}</Text>
+        {previousCounter.current !== 'undefined' && (
+          <Text style={styles.text}>
+            Previous value of Counter {previousCounter.current}
+          </Text>
+        )}
+        <Button
+          title="Generate Number"
+          onPress={() => setCounter(Math.ceil(Math.random() * 10))}
+        />
       </View>
-      <Text style={styles.text}>Current value of Counter {counter}</Text>
-      {previousCounter.current !== 'undefined' && (
-        <Text style={styles.text}>
-          Previous value of Counter {previousCounter.current}
-        </Text>
-      )}
-      <Button
-        title="Generate Number"
-        onPress={() => setCounter(Math.ceil(Math.random() * 10))}
-      />
-    </View>
+    </>
   );
 };
 
@@ -50,6 +60,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+    backgroundColor: colors.white,
   },
   heading: {
     fontWeight: 'bold',

@@ -1,6 +1,4 @@
-import {color} from 'react-native-reanimated';
-
-export default colors = {
+export const colors = {
   lightblue: 'rgb(20, 146, 204)',
   white: 'rgb(255,255,255)',
   black: 'rgb(0,0,0)',

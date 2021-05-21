@@ -1,22 +1,34 @@
 import React, {useState, useRef, useImperativeHandle, forwardRef} from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 
-import {string} from '../../Config/string';
+import CustomHeader from '../../Components/customHeader';
 
-const ImperativeHandle = () => {
+import {string} from '../../Config/string';
+import {colors} from '../../Styles/colors';
+
+const ImperativeHandle = ({navigation}) => {
   const ref = useRef();
   //   console.log("ref>..", ref);
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>{string.use_imperative_handle_example}</Text>
-      <Counter ref={ref} />
-      <View style={styles.button}>
-        <Button
-          title="Decrement from parent"
-          onPress={() => ref.current.decrement()}
-        />
+    <>
+      <CustomHeader
+        screenName="useImperativeHandle Example"
+        navigation={navigation}
+        backArrow={true}
+      />
+      <View style={styles.container}>
+        {/* <Text style={styles.heading}>
+          {string.use_imperative_handle_example}
+        </Text> */}
+        <Counter ref={ref} />
+        <View style={styles.button}>
+          <Button
+            title="Decrement from parent"
+            onPress={() => ref.current.decrement()}
+          />
+        </View>
       </View>
-    </View>
+    </>
   );
 };
 
@@ -50,6 +62,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+    backgroundColor: colors.white,
   },
   heading: {
     fontWeight: 'bold',
