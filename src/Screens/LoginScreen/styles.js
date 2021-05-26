@@ -57,4 +57,7 @@ export const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     top: '35%',
   },
+  errorText: {
+    color: colors.red,
+  },
 });

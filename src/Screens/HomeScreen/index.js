@@ -1,15 +1,28 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
+import {useDispatch} from 'react-redux';
+
+import {userLoggedOut} from '../../Redux/Actions/userAction';
 import CustomHeader from '../../Components/customHeader';
+import {string} from '../../Config/string';
 
 import {styles} from './styles';
 
 const HomeScreen = ({navigation}) => {
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(userLoggedOut());
+  };
+
   return (
     <>
       <CustomHeader screenName="Home" navigation={navigation} />
       <View style={styles.container}>
         <Text style={styles.text}>Home Screen</Text>
+        <TouchableOpacity style={styles.button} onPress={() => handleLogout()}>
+          <Text style={styles.buttonText}>{string.logout.toUpperCase()}</Text>
+        </TouchableOpacity>
       </View>
     </>
   );
