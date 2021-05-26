@@ -5,7 +5,6 @@ const initialState = {
 };
 
 const getUser = (state = initialState, action) => {
-  console.log('action>>>', action);
   switch (action.type) {
     case ActionType.USER_LOGGED_IN:
       return {...state, isUserLoggedIn: true};

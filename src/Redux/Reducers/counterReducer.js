@@ -5,7 +5,6 @@ const initialState = {
 };
 
 const getCount = (state = initialState, action) => {
-  // console.log('action>>>', action);
   switch (action.type) {
     case ActionType.INCREASE_COUNT:
       state.count += 1;
