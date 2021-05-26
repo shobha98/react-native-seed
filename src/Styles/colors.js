@@ -7,4 +7,5 @@ export const colors = {
   dimBlack: 'rgba(0,0,0,.78)',
   snow: 'rgba(249, 249, 249, 1)',
   greyTwo: 'rgba(164,164,164,1)',
+  red: 'rgb(255,0,0)',
 };

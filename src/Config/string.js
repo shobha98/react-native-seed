@@ -20,4 +20,5 @@ export const string = {
   no_internet_msg:
     'No internet connection. Make sure that Wi-Fi or mobile data is turned on, then try again.',
   forgot_password: 'Forgot Password?',
+  logout: 'Logout',
 };
