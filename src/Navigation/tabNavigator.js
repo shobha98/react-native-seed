@@ -1,21 +1,21 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import {ReducerHook, ContextHook} from '../Screens';
+import {HooksExample, ReduxSagaExample} from '../Screens';
 
-import DrawerNavigator from './drawerNavigator';
 import TabBar from './tabBar';
+import UserNavigator from './userNavigator';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
   return (
     <Tab.Navigator
-      initialRouteName={'LoginScreen'}
+      initialRouteName={'HomeScreen'}
       tabBar={(props) => <TabBar {...props} />}>
-      <Tab.Screen name="HomeScreen" component={DrawerNavigator} />
-      <Tab.Screen name="ReducerHook" component={ReducerHook} />
-      <Tab.Screen name="ContextHook" component={ContextHook} />
+      <Tab.Screen name="HomeScreen" component={UserNavigator} />
+      <Tab.Screen name="HooksExample" component={HooksExample} />
+      <Tab.Screen name="ReduxSagaExample" component={ReduxSagaExample} />
     </Tab.Navigator>
   );
 };

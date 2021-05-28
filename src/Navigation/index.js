@@ -3,17 +3,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {useSelector} from 'react-redux';
 
-import {
-  LoginScreen,
-  SignupScreen,
-  ReducerHook,
-  ContextHook,
-  UseRefHook,
-  MemoHook,
-  ImperativeHandle,
-} from '../Screens';
+import {LoginScreen, SignupScreen} from '../Screens';
 
-import TabNavigator from './tabNavigator';
+import DrawerNavigator from './drawerNavigator';
 
 const Stack = createStackNavigator();
 
@@ -33,17 +25,7 @@ const AppNavigator = () => {
             <Stack.Screen name="SignupScreen" component={SignupScreen} />
           </>
         ) : (
-          <>
-            <Stack.Screen name="HomeScreen" component={TabNavigator} />
-            <Stack.Screen name="ReducerHook" component={ReducerHook} />
-            <Stack.Screen name="ContextHook" component={ContextHook} />
-            <Stack.Screen name="UseRefHook" component={UseRefHook} />
-            <Stack.Screen name="MemoHook" component={MemoHook} />
-            <Stack.Screen
-              name="ImperativeHandle"
-              component={ImperativeHandle}
-            />
-          </>
+          <Stack.Screen name="HomeScreen" component={DrawerNavigator} />
         )}
       </Stack.Navigator>
     </NavigationContainer>
